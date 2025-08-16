@@ -4,7 +4,7 @@ Este proyecto es una Plataforma de Análisis de Sentimientos en Tiempo Real para
 
 El sistema utiliza modelos de Procesamiento del Lenguaje Natural (NLP) para procesar grandes volúmenes de texto en tiempo real, permitiendo a las empresas actuar de manera proactiva en su servicio al cliente y estrategia de producto.
 
-**CARATERÍSTICAS PRINCIPALES**
+**CARATERÍSTICAS PRINCIPALES:**
 
 - Análisis de Sentimientos: Clasifica el texto en positivo, negativo o neutro.
 
@@ -49,9 +49,10 @@ El sistema utiliza modelos de Procesamiento del Lenguaje Natural (NLP) para proc
 ```
 
 **COLABORADORES DEL PROYECTO**
-DAVID FRANCISCO ALVAREZ ALVAREZ
-MARCELO XAVIER CASTILLO VALVERDE
-ALEJANDRO SEBASTIAN CASTRO NASEVILLA
-LADY ANAHI GARCES VELASCO
-DANIELA ESTEFANIA PEZANTEZ CHIMBO
-MARIA MERCEDES VERA LETAMENDI
+
+- David Francisco Alvarez Alvarez
+- Marcelo Xavier Castillo Valverde 
+- Alejandro Sebastian Castro Nasevilla
+- Lady Anahi Garces velasco
+- Daniela Estefania Pezantez Chimbo
+- María Mercedes Vera Letamendi
