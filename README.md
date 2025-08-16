@@ -15,3 +15,35 @@ CARATERÍSTICAS PRINCIPALES
 - Generación de Respuestas Automáticas: Utiliza modelos de IA generativa para sugerir o crear respuestas automáticas a los comentarios.
 
 - Procesamiento en Tiempo Real: Capaz de procesar flujos de datos continuos desde diversas fuentes (APIs, web scraping).
+
+ESTRUCTURA DEL PROYECTO
+´´´
+├── README.md
+├── requirements.txt
+├── setup.py
+├── data/
+│   ├── raw/                # Datos originales (Amazon Product Reviews)
+│   ├── processed/          # Datos limpios y listos para el entrenamiento
+│   └── external/           # Datos de terceros o scrapings
+├── src/
+│   ├── data/               # Scripts de procesamiento de datos y feature engineering
+│   ├── models/             # Scripts para el entrenamiento y evaluación de modelos
+│   ├── features/           # Funciones para la extracción de features
+│   ├── visualization/      # Scripts para generar gráficos y reportes
+│   └── utils/              # Funciones de utilidad
+├── models/
+│   ├── trained_models/     # Modelos pre-entrenados listos para su uso
+│   └── model_configs/      # Archivos de configuración de los modelos
+├── notebooks/
+│   ├── exploratory/        # Análisis exploratorio de datos (EDA)
+│   ├── modeling/           # Pruebas y experimentos de modelos
+│   └── evaluation/         # Análisis del rendimiento de los modelos
+├── api/
+│   ├── app.py              # Aplicación principal de la API con FastAPI
+│   ├── routes/             # Rutas de la API (endpoints)
+│   └── schemas/            # Definiciones de datos para la API
+├── dashboard/              # Código para el dashboard de visualización
+├── tests/                  # Pruebas unitarias y de integración
+├── docs/                   # Documentación adicional del proyecto
+└── docker/                 # Archivos para la contenerización del proyecto
+´´´
