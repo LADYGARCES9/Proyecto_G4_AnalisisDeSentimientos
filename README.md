@@ -16,7 +16,7 @@ El sistema utiliza modelos de Procesamiento del Lenguaje Natural (NLP) para proc
 
 - Procesamiento en Tiempo Real: Capaz de procesar flujos de datos continuos desde diversas fuentes (APIs, web scraping).
 
-**ESTRUCTURA DEL PROYECTO**
+**ESTRUCTURA DEL PROYECTO** (será modificada una vez que se termine de subir la información...)
 ```
 ├── README.md
 ├── requirements.txt
@@ -47,3 +47,11 @@ El sistema utiliza modelos de Procesamiento del Lenguaje Natural (NLP) para proc
 ├── docs/                   # Documentación adicional del proyecto
 └── docker/                 # Archivos para la contenerización del proyecto
 ```
+
+**COLABORADORES DEL PROYECTO**
+DAVID FRANCISCO ALVAREZ ALVAREZ
+MARCELO XAVIER CASTILLO VALVERDE
+ALEJANDRO SEBASTIAN CASTRO NASEVILLA
+LADY ANAHI GARCES VELASCO
+DANIELA ESTEFANIA PEZANTEZ CHIMBO
+MARIA MERCEDES VERA LETAMENDI
