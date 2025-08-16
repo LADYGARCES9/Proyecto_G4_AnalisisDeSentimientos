@@ -1,0 +1,5 @@
+text,sentiment,aspects,urgency_score,reply
+La batería se descarga muy rápido y el cargador no funciona.,positive,"['battery', 'accessories']",0.2,"¡Gracias! Nos alegra tu buena experiencia con battery, accessories."
+Llegó a tiempo y la cámara es excelente.,positive,[],0.2,¡Gracias! Nos alegra tu buena experiencia con el producto.
+"La pantalla está bien, pero el precio me pareció alto.",neutral,"['price', 'screen']",0.2,"Gracias por tu comentario sobre price, screen. Si necesitas ayuda, estamos atentos."
+"Refund requested, item arrived damaged and the box was open.",negative,['shipping'],0.8,Lamentamos lo ocurrido con shipping. Escalamos tu caso para atención prioritaria. Por favor envía tu número de pedido para resolverlo cuanto antes.
