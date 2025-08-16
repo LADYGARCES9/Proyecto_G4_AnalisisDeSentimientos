@@ -1,0 +1,109 @@
+# api/app.py
+from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import List, Optional
+from datetime import datetime
+from pathlib import Path
+import os, csv
+
+# Import robusto para tu config en src/utils/config_rutas.py
+try:
+    from src.utils.config_rutas import reports_dir
+except ModuleNotFoundError:
+    import sys
+    sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
+    from utils.config_rutas import reports_dir
+
+app = FastAPI(title="NLP Real-time API (Demo)")
+
+RESULTS_CSV = reports_dir / "results_log.csv"
+ALERTS_CSV  = reports_dir / "alerts_log.csv"
+RESULTS_CSV.parent.mkdir(parents=True, exist_ok=True)
+if not RESULTS_CSV.exists():
+    with open(RESULTS_CSV, "w", encoding="utf-8", newline="") as f:
+        csv.writer(f).writerow(["ts","text","sentiment","urgency","aspects"])
+if not ALERTS_CSV.exists():
+    with open(ALERTS_CSV, "w", encoding="utf-8", newline="") as f:
+        csv.writer(f).writerow(["ts","text","reason","sentiment","urgency","aspects"])
+
+# Reglas simples (placeholders) — puedes conectar tus modelos luego por ENV
+NEG = {"bad","terrible","awful","broken","late","delay","refund","worst","disappointed","scam","defect",
+       "mal","malo","horrible","defectuoso","tarde","retraso","devolución","estafa","roto"}
+POS = {"good","excellent","great","amazing","perfect","love","nice",
+       "excelente","bueno","genial","perfecto","me encanta"}
+
+def sent(x:str)->str:
+    x=x.lower()
+    if any(w in x for w in NEG): return "negative"
+    if any(w in x for w in POS): return "positive"
+    return "neutral"
+
+def urg(x:str)->str:
+    x=x.lower()
+    if any(w in x for w in ["refund","urgent","scam","broken","late","delay",
+                            "reembolso","urgente","estafa","roto","tarde","retraso"]): return "high"
+    if any(w in x for w in ["issue","problem","bad","queja","problema","malo"]): return "medium"
+    return "low"
+
+ASPECT = {
+    "price":    ["price","expensive","cheap","precio","caro","barato","cost"],
+    "quality":  ["quality","defect","broken","calidad","defecto","roto"],
+    "shipping": ["ship","shipping","delivery","envío","entrega","courier","reparto"],
+}
+def aspects(x:str):
+    x=x.lower()
+    return [a for a,kws in ASPECT.items() if any(kw in x for kw in kws)]
+
+class ReviewIn(BaseModel):
+    text: str
+    source: Optional[str] = "api"
+    ts: Optional[str] = None
+
+class BatchIn(BaseModel):
+    items: List[ReviewIn]
+
+def log_result(row):
+    with open(RESULTS_CSV, "a", encoding="utf-8", newline="") as f:
+        csv.writer(f).writerow([row["ts"], row["text"], row["sentiment"], row["urgency"], "|".join(row["aspects"])])
+
+def log_alert(row, reason="negative_high_urgency"):
+    with open(ALERTS_CSV, "a", encoding="utf-8", newline="") as f:
+        csv.writer(f).writerow([row["ts"], row["text"], reason, row["sentiment"], row["urgency"], "|".join(row["aspects"])])
+
+@app.get("/health")
+def health():
+    return {"status":"ok","time":datetime.now().isoformat()}
+
+@app.post("/predict")
+def predict_one(item: ReviewIn):
+    row = {
+        "ts": item.ts or datetime.now().isoformat(),
+        "text": item.text,
+        "sentiment": sent(item.text),
+        "urgency": urg(item.text),
+        "aspects": aspects(item.text)
+    }
+    log_result(row)
+    if row["sentiment"]=="negative" and row["urgency"]=="high":
+        log_alert(row)
+    return row
+
+@app.post("/batch")
+def predict_batch(batch: BatchIn):
+    results = [predict_one(it) for it in batch.items]
+    return {"count": len(results), "results": results}
+
+
+from src.utils.config_rutas import reports_dir
+from src.utils.loggers import append_result, append_alert
+
+RESULTS_CSV = reports_dir / "results_log.csv"
+ALERTS_CSV  = reports_dir / "alerts_log.csv"
+
+def log_prediction(text, sentiment, urgency, aspects_str=""):
+    append_result(RESULTS_CSV, text=text, sentiment=sentiment, urgency=urgency, aspects=aspects_str)
+    # regla de ejemplo para alerta
+    if sentiment.lower() == "negative" and urgency.lower() == "high":
+        append_alert(ALERTS_CSV, text=text, sentiment=sentiment, urgency=urgency,
+                     reason="negativo y alta urgencia", aspects=aspects_str)
+
