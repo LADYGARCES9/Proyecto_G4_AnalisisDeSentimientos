@@ -23,7 +23,6 @@ datasets/
 *.h5
 # models/  # comentado para permitir subir
 checkpoints/
-
 # Sistema
 .DS_Store
 Thumbs.db
