@@ -13,7 +13,7 @@ venv/
 *.checkpoint.ipynb
 
 # Datos y modelos
-data/
+# data/  # comentado para permitir subir
 datasets/
 *.csv
 *.parquet
@@ -21,7 +21,7 @@ datasets/
 *.pth
 *.pt
 *.h5
-models/
+# models/  # comentado para permitir subir
 checkpoints/
 
 # Sistema

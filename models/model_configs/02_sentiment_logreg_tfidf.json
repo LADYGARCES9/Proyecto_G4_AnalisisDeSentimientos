@@ -1,0 +1,21 @@
+{
+  "model": "logreg_tfidf",
+  "tfidf": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_features": 50000
+  },
+  "split": {
+    "test_size": 0.2,
+    "stratify": true,
+    "seed": 42
+  },
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ]
+}
