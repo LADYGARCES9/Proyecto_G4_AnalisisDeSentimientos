@@ -17,7 +17,7 @@ CARATERÍSTICAS PRINCIPALES
 - Procesamiento en Tiempo Real: Capaz de procesar flujos de datos continuos desde diversas fuentes (APIs, web scraping).
 
 ESTRUCTURA DEL PROYECTO
-´´´
+```
 ├── README.md
 ├── requirements.txt
 ├── setup.py
@@ -46,4 +46,4 @@ ESTRUCTURA DEL PROYECTO
 ├── tests/                  # Pruebas unitarias y de integración
 ├── docs/                   # Documentación adicional del proyecto
 └── docker/                 # Archivos para la contenerización del proyecto
-´´´
+```
