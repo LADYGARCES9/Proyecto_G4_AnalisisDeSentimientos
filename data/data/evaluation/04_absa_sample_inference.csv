@@ -1,9 +1,0 @@
-text,aspect,prediction
-The price is great but the screen is dim and the camera is grainy.,screen,positive
-The price is great but the screen is dim and the camera is grainy.,camera,positive
-The price is great but the screen is dim and the camera is grainy.,price,positive
-"Excellent battery life, solid build quality.",battery,positive
-"Excellent battery life, solid build quality.",build_quality,positive
-Shipping was late and the charger arrived broken.,shipping,negative
-Shipping was late and the charger arrived broken.,battery,negative
-Shipping was late and the charger arrived broken.,accessories,negative
