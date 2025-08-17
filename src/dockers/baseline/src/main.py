@@ -1,4 +1,5 @@
 # --- carga robusta de artefacto ---
+import os
 import joblib
 from sklearn.pipeline import Pipeline
 
@@ -38,6 +39,7 @@ else:
         if proba_fn:
             out["proba"] = proba_fn(X)[0].tolist()
         return out
+
 
 
 
