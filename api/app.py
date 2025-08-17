@@ -148,6 +148,11 @@ def _startup():
     t.start()
 
 # ===== endpoints =====
+@app.get("/test")
+def test():
+    return {"ok": True, "message": "🚀 API funcionando correctamente"}
+
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
