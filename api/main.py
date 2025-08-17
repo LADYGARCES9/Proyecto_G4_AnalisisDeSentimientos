@@ -5,7 +5,6 @@ from pydantic import BaseModel
 from typing import Optional, List, Dict
 from pathlib import Path
 import os, json, uuid, threading
-from threading import Event  # <-- para sincronizar request-reply
 
 # ===== rutas del proyecto =====
 try:
@@ -25,6 +24,7 @@ except ModuleNotFoundError:
 
 # ===== Kafka =====
 from confluent_kafka import Producer, Consumer
+from confluent_kafka.admin import AdminClient, NewTopic
 
 KAFKA_BROKERS = os.getenv("KAFKA_BROKERS", "kafka:9092")
 TOPIC_SENT_IN  = os.getenv("TOPIC_SENT_IN",  "ml.sentiment.in")
@@ -32,9 +32,6 @@ TOPIC_SENT_OUT = os.getenv("TOPIC_SENT_OUT", "ml.sentiment.out")
 TOPIC_ABSA_IN  = os.getenv("TOPIC_ABSA_IN",  "ml.absa.in")
 TOPIC_ABSA_OUT = os.getenv("TOPIC_ABSA_OUT", "ml.absa.out")
 GROUP_ID = os.getenv("GROUP_ID", "integration-api-v1")
-
-# Timeout de espera del request-reply (segundos)
-PREDICT_TIMEOUT_SEC = float(os.getenv("PREDICT_TIMEOUT_SEC", "12"))
 
 # ===== App =====
 app = FastAPI(title="Sentiment API (Kafka)", version="1.0.0")
@@ -56,9 +53,8 @@ class BatchItems(BaseModel):
     items: List[Item]
 
 # ===== caches =====
-RESULTS: Dict[str, Dict] = {}         # cid -> evento del worker
-PENDING_TEXT: Dict[str, str] = {}     # cid -> texto original (para logging)
-WAITERS: Dict[str, Event] = {}        # cid -> Event para esperar la respuesta
+RESULTS: Dict[str, Dict] = {}
+PENDING_TEXT: Dict[str, str] = {}
 
 # ===== helpers =====
 def simple_urgency(text: str, sentiment: str) -> str:
@@ -85,6 +81,23 @@ def enqueue(topic: str, payload: dict) -> str:
     producer.flush()
     return cid
 
+# ===== asegurador de tópicos =====
+def ensure_topics(bootstrap: str, topics: List[str]):
+    admin = AdminClient({"bootstrap.servers": bootstrap})
+    md = admin.list_topics(timeout=5)
+    missing = [t for t in topics if t not in md.topics]
+    if not missing:
+        print("✅ Topics ya existen:", ", ".join(topics))
+        return
+    new = [NewTopic(t, num_partitions=1, replication_factor=1) for t in missing]
+    fs = admin.create_topics(new)
+    for t, f in fs.items():
+        try:
+            f.result()
+            print(f"🆕 Topic creado: {t}")
+        except Exception as e:
+            print(f"⚠️ No se pudo crear {t}: {e}")
+
 # ===== consumer en background =====
 def bg_consume():
     cons = Consumer({
@@ -101,21 +114,15 @@ def bg_consume():
     try:
         while True:
             msg = cons.poll(1.0)
-            if not msg: 
-                continue
+            if not msg: continue
             if msg.error():
-                print("KafkaErr:", msg.error()); 
-                continue
+                print("KafkaErr:", msg.error()); continue
             try:
                 evt = json.loads(msg.value().decode("utf-8"))
                 cid = evt.get("correlation_id")
-                if not cid:
-                    continue
-
-                # guarda resultado
+                if not cid: continue
                 RESULTS[cid] = evt
 
-                # logging a CSVs con tu helper
                 text = PENDING_TEXT.pop(cid, None)
                 if text:
                     res = evt.get("result", {})
@@ -129,11 +136,6 @@ def bg_consume():
                     if sentiment == "negative" and urg == "high":
                         append_alert(ALERTS_CSV, "negativo/alto", sentiment, urg, "umbral auto", aspects_str)
 
-                # despierta al que esté esperando este cid
-                w = WAITERS.pop(cid, None)
-                if w:
-                    w.set()
-
                 print("✅ stored:", cid)
             except Exception as e:
                 print("❌ parse error:", e)
@@ -142,11 +144,16 @@ def bg_consume():
 
 @app.on_event("startup")
 def _startup():
+    # crea los topics antes de arrancar el consumer
+    ensure_topics(KAFKA_BROKERS, [
+        TOPIC_SENT_IN, TOPIC_SENT_OUT,
+        TOPIC_ABSA_IN, TOPIC_ABSA_OUT
+    ])
     t = threading.Thread(target=bg_consume, daemon=True)
     t.start()
 
 # ===== endpoints =====
-@app.get("/test")
+@app.post("/test")
 def test():
     return {"ok": True, "message": "🚀 API funcionando correctamente"}
 
@@ -156,37 +163,10 @@ def health():
 
 @app.post("/predict")
 def predict_one(item: Item):
-    """
-    Encola el texto a SENTIMENT y espera sincrónicamente la respuesta del worker.
-    Devuelve el 'result' directamente. Si no llega a tiempo, 504.
-    """
     try:
-        # 1) Encolar
         cid = enqueue(TOPIC_SENT_IN, {"text": item.text})
         PENDING_TEXT[cid] = item.text
-
-        # 2) Esperar respuesta (request-reply)
-        ev = Event()
-        WAITERS[cid] = ev
-        ok = ev.wait(timeout=PREDICT_TIMEOUT_SEC)
-
-        if not ok:
-            WAITERS.pop(cid, None)  # limpieza defensiva
-            return JSONResponse(
-                status_code=504,
-                content={"ok": False, "detail": "Timeout esperando resultado", "correlation_id": cid}
-            )
-
-        # 3) Entregar resultado real
-        evt = RESULTS.pop(cid, None)
-        if not evt:
-            return JSONResponse(
-                status_code=500,
-                content={"ok": False, "detail": "Respuesta no disponible tras señal", "correlation_id": cid}
-            )
-
-        return {"ok": True, "result": evt.get("result")}
-
+        return {"ok": True, "correlation_id": cid, "text": item.text}
     except Exception as e:
         return JSONResponse(status_code=500, content={"detail": f"error en /predict: {e}"})
 
@@ -197,11 +177,11 @@ def get_result(cid: str):
         raise HTTPException(status_code=404, detail="Result not found yet")
     return evt
 
-# ===== arranque rápido (para correr con `python api/app.py`) =====
+# ===== arranque rápido =====
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        "main:app",              # <- ajusta a "main:app" si el archivo real se llama main.py
+        "app:app",
         host="0.0.0.0",
         port=int(os.getenv("PORT", 8000)),
         log_level="info"
