@@ -14,6 +14,7 @@ RUN pip install /wheels/* && rm -rf /wheels
 COPY src/main.py ./main.py
 # modelo (desde la RAÍZ del repo)
 COPY src/02_baseline_best.joblib ./models/02_baseline_best.joblib
+COPY src/02_sentiment_logreg_tfidf.joblib ./models/02_sentiment_logreg_tfidf.joblib
 
 ENV KAFKA_BROKERS=kafka:9092 \
     TOPIC_IN=ml.sentiment.in \
@@ -22,5 +23,6 @@ ENV KAFKA_BROKERS=kafka:9092 \
     MODEL_PATH=/app/models/02_baseline_best.joblib
 
 CMD ["python", "main.py"]
+
 
 
