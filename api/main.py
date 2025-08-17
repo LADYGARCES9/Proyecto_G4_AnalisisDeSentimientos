@@ -164,11 +164,35 @@ def health():
 @app.post("/predict")
 def predict_one(item: Item):
     try:
+        # 1) Publica en Kafka
         cid = enqueue(TOPIC_SENT_IN, {"text": item.text})
         PENDING_TEXT[cid] = item.text
-        return {"ok": True, "correlation_id": cid, "text": item.text}
+
+        # 2) Espera la respuesta del worker (hasta PREDICT_TIMEOUT_SEC)
+        ev = Event()
+        WAITERS[cid] = ev
+        ok = ev.wait(timeout=PREDICT_TIMEOUT_SEC)
+
+        if not ok:
+            WAITERS.pop(cid, None)  # limpieza por si acaso
+            return JSONResponse(
+                status_code=504,
+                content={"ok": False, "detail": "Timeout esperando resultado", "correlation_id": cid}
+            )
+
+        # 3) Entrega el resultado real
+        evt = RESULTS.pop(cid, None)
+        if not evt:
+            return JSONResponse(
+                status_code=500,
+                content={"ok": False, "detail": "Respuesta no disponible tras señal", "correlation_id": cid}
+            )
+
+        return {"ok": True, "result": evt.get("result")}
+
     except Exception as e:
         return JSONResponse(status_code=500, content={"detail": f"error en /predict: {e}"})
+
 
 @app.get("/result/{cid}")
 def get_result(cid: str):
