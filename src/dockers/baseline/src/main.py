@@ -2,7 +2,11 @@
 import joblib
 from sklearn.pipeline import Pipeline
 
-obj = joblib.load(MODEL_PATH,"/models/02_baseline_best.joblib")
+# Ruta del modelo (ajusta el nombre al .joblib real)
+MODEL_PATH = os.getenv("MODEL_PATH", "/models/02_baseline_best.joblib")
+
+print(f"🔍 Cargando modelo desde: {MODEL_PATH}")
+obj = joblib.load(MODEL_PATH)
 
 # Caso A: guardaste un Pipeline entero (.predict ya maneja el preproc)
 if isinstance(obj, Pipeline):
@@ -34,6 +38,7 @@ else:
         if proba_fn:
             out["proba"] = proba_fn(X)[0].tolist()
         return out
+
 
 
 
