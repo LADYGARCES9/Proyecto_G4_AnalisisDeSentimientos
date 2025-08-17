@@ -1,0 +1,517 @@
+ts,text,reason,sentiment,urgency,aspects
+2025-08-15T02:03:01.862159,"La entrega llegó tarde y el producto vino roto, quiero devolución",negative_high_urgency,negative,high,quality|shipping
+2025-08-15T02:05:26.284368,The product arrived late and the quality was terrible,negative_high_urgency,negative,high,quality
+2025-08-15T02:07:50.161721,The packaging was damaged and the item was broken,negative_high_urgency,negative,high,quality
+2025-08-14T14:21:35,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-14T14:44:57,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T14:18:32,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T14:51:31,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T14:17:48,Arrived late and box was damaged — cheap build for the price,negative_high_urgency,negative,high,price
+2025-08-14T14:05:01,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T15:15:18,It works as expected — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T15:04:37,Arrived late and box was damaged — worth the cost,negative_high_urgency,negative,high,price
+2025-08-14T15:07:47,Arrived late and box was damaged — worth the cost,negative_high_urgency,negative,high,price
+2025-08-14T15:56:41,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T15:00:45,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T15:32:21,Arrived late and box was damaged — excellent build,negative_high_urgency,negative,high,
+2025-08-14T15:55:45,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T15:30:18,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-14T16:35:32,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-14T16:01:51,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T16:26:50,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-14T16:23:58,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T16:14:41,Arrived late and box was damaged — excellent build,negative_high_urgency,negative,high,
+2025-08-14T16:19:57,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T16:02:41,The product is okay — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T16:02:55,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T17:41:14,Arrived late and box was damaged — worth the cost,negative_high_urgency,negative,high,price
+2025-08-14T17:14:25,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T17:01:23,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-14T17:47:05,Arrived late and box was damaged — fast shipping,negative_high_urgency,negative,high,shipping
+2025-08-14T17:09:33,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T17:15:16,Arrived late and box was damaged — great price,negative_high_urgency,negative,high,price
+2025-08-14T18:23:57,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T18:46:17,Camera is fantastic — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T18:52:31,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-14T18:31:40,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T19:10:07,The item was broken and I want a refund — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T19:20:49,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T19:11:03,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T20:38:02,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T20:32:29,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T20:01:44,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-14T20:29:04,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T20:35:23,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T20:57:28,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T20:42:53,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T21:26:09,Battery dies quickly — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T22:42:03,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T22:56:09,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T22:31:52,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-14T22:25:48,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-14T22:29:06,Arrived late and box was damaged — worth the cost,negative_high_urgency,negative,high,price
+2025-08-14T23:20:20,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T23:46:29,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T00:16:11,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-15T00:46:53,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-15T00:48:48,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T01:06:36,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-15T01:15:45,Arrived late and box was damaged — excellent build,negative_high_urgency,negative,high,
+2025-08-15T01:29:10,The item was broken and I want a refund — too expensive,negative_high_urgency,negative,high,price|quality
+2025-08-15T01:27:13,"Excellent quality, I loved it — late delivery",negative_high_urgency,negative,high,quality|shipping
+2025-08-15T01:30:45,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T01:59:18,The item was broken and I want a refund — great price,negative_high_urgency,negative,high,price|quality
+2025-08-15T01:59:20,Fast delivery and well packed — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T01:25:57,The item was broken and I want a refund — worth the cost,negative_high_urgency,negative,high,price|quality
+2025-08-15T03:05:23.206536,The product arrived late and the quality was terrible,negative_high_urgency,negative,high,quality
+2025-08-15T03:05:26.342227,The packaging was damaged and the item was broken,negative_high_urgency,negative,high,quality
+2025-08-14T15:39:59,Poor camera quality — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T15:05:54,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T16:08:22,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T16:00:02,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T16:19:24,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T17:28:23,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T17:07:04,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-14T17:10:10,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T18:22:22,Arrived late and box was damaged — stopped working,negative_high_urgency,negative,high,
+2025-08-14T18:41:19,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T18:13:23,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T19:37:51,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-14T19:43:38,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T19:32:58,The item was broken and I want a refund — too expensive,negative_high_urgency,negative,high,price|quality
+2025-08-14T19:19:09,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T20:59:51,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T20:49:32,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T21:16:26,The item was broken and I want a refund — on-time delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T21:05:56,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T21:02:14,The item was broken and I want a refund — damaged packaging,negative_high_urgency,negative,high,quality
+2025-08-14T21:14:31,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T21:42:01,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T22:56:35,Arrived late and box was damaged — great price,negative_high_urgency,negative,high,price
+2025-08-14T22:29:56,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T23:31:51,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-14T23:12:08,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T23:50:54,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-14T23:24:22,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-14T23:08:01,Overpriced for what it offers — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T23:30:20,Arrived late and box was damaged — fast shipping,negative_high_urgency,negative,high,shipping
+2025-08-14T23:54:48,Arrived late and box was damaged — cheap build for the price,negative_high_urgency,negative,high,price
+2025-08-14T23:28:24,Arrived late and box was damaged — great price,negative_high_urgency,negative,high,price
+2025-08-15T00:20:29,Arrived late and box was damaged — fast shipping,negative_high_urgency,negative,high,shipping
+2025-08-15T00:54:09,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-15T00:10:09,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T00:39:09,The item was broken and I want a refund — on-time delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T00:09:45,The item was broken and I want a refund — defective unit,negative_high_urgency,negative,high,quality
+2025-08-15T01:15:50,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-15T01:20:39,The item was broken and I want a refund — great price,negative_high_urgency,negative,high,price|quality
+2025-08-15T01:09:48,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-15T02:58:21,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T02:47:45,Arrived late and box was damaged — great price,negative_high_urgency,negative,high,price
+2025-08-15T03:31:27.438904,The product arrived late and the quality was terrible,negative_high_urgency,negative,high,quality
+2025-08-15T03:31:28.890614,The packaging was damaged and the item was broken,negative_high_urgency,negative,high,quality
+2025-08-14T15:19:16,Arrived late and box was damaged — great price,negative_high_urgency,negative,high,price
+2025-08-14T15:48:32,No issues so far — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T15:15:50,Arrived late and box was damaged — great price,negative_high_urgency,negative,high,price
+2025-08-14T15:20:52,Arrived late and box was damaged — fast shipping,negative_high_urgency,negative,high,shipping
+2025-08-14T15:44:37,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T15:26:49,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T15:39:14,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T16:12:09,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T17:03:11,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T17:21:04,Average performance — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T17:18:39,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T17:15:38,Overpriced for what it offers — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T17:32:06,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T17:05:16,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T18:23:38,Battery dies quickly — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T18:16:54,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-14T18:47:30,The item was broken and I want a refund — worth the cost,negative_high_urgency,negative,high,price|quality
+2025-08-14T19:11:17,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T19:46:22,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-14T19:58:36,"Excellent quality, I loved it — late delivery",negative_high_urgency,negative,high,quality|shipping
+2025-08-14T19:38:50,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T20:31:41,Arrived late and box was damaged — slow courier,negative_high_urgency,negative,high,shipping
+2025-08-14T20:45:42,"Excellent quality, I loved it — late delivery",negative_high_urgency,negative,high,quality|shipping
+2025-08-14T20:32:33,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T21:52:19,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T21:58:12,Battery dies quickly — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T21:21:45,The item was broken and I want a refund — worth the cost,negative_high_urgency,negative,high,price|quality
+2025-08-14T21:21:40,The item was broken and I want a refund — defective unit,negative_high_urgency,negative,high,quality
+2025-08-14T21:19:56,Nothing special about it — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T22:22:44,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-14T22:07:16,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T22:57:40,Arrived late and box was damaged — defective unit,negative_high_urgency,negative,high,quality
+2025-08-14T23:49:07,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-15T00:50:35,Nothing special about it — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T00:29:12,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-15T00:04:37,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-15T00:51:11,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T01:17:09,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-15T01:45:40,Fast delivery and well packed — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T01:15:45,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T01:44:29,"Excellent quality, I loved it — late delivery",negative_high_urgency,negative,high,quality|shipping
+2025-08-15T02:11:14,"Excellent quality, I loved it — late delivery",negative_high_urgency,negative,high,quality|shipping
+2025-08-15T02:56:19,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-15T05:21:00.020923,The product arrived late and the quality was terrible,negative_high_urgency,negative,high,quality
+2025-08-15T05:21:00.110166,The packaging was damaged and the item was broken,negative_high_urgency,negative,high,quality
+2025-08-14T17:01:38,Overpriced for what it offers — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T17:58:13,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T17:48:37,The item was broken and I want a refund — damaged packaging,negative_high_urgency,negative,high,quality
+2025-08-14T17:39:57,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-14T18:31:09,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T18:35:18,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T18:29:17,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T19:45:27,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T19:23:54,The product is okay — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T20:22:34,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T20:20:05,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T20:05:41,Battery dies quickly — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T20:09:44,The item was broken and I want a refund — too expensive,negative_high_urgency,negative,high,price|quality
+2025-08-14T20:37:10,Arrived late and box was damaged — defective unit,negative_high_urgency,negative,high,quality
+2025-08-14T20:07:31,The item was broken and I want a refund — on-time delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T20:01:26,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T20:51:52,Arrived late and box was damaged — worth the cost,negative_high_urgency,negative,high,price
+2025-08-14T21:03:51,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T21:57:26,The item was broken and I want a refund — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T21:29:53,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T21:40:16,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-14T22:14:26,Arrived late and box was damaged — slow courier,negative_high_urgency,negative,high,shipping
+2025-08-14T23:58:09,Poor camera quality — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T00:20:15,Poor camera quality — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T00:16:40,The item was broken and I want a refund — great price,negative_high_urgency,negative,high,price|quality
+2025-08-15T00:16:54,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-15T01:34:00,Camera is fantastic — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T01:28:05,The item was broken and I want a refund — cheap build for the price,negative_high_urgency,negative,high,price|quality
+2025-08-15T01:32:19,Poor camera quality — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T01:23:58,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T02:37:46,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T02:40:12,It works as expected — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T02:28:36,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-15T03:56:24,The item was broken and I want a refund — great price,negative_high_urgency,negative,high,price|quality
+2025-08-15T03:39:21,Arrived late and box was damaged — cheap build for the price,negative_high_urgency,negative,high,price
+2025-08-15T03:10:55,Arrived late and box was damaged — excellent build,negative_high_urgency,negative,high,
+2025-08-15T03:05:41,Camera is fantastic — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T03:27:49,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-15T04:11:52,The item was broken and I want a refund — cheap build for the price,negative_high_urgency,negative,high,price|quality
+2025-08-15T04:29:48,Arrived late and box was damaged — worth the cost,negative_high_urgency,negative,high,price
+2025-08-15T04:17:55,Arrived late and box was damaged — fast shipping,negative_high_urgency,negative,high,shipping
+2025-08-15T04:14:51,Arrived late and box was damaged — stopped working,negative_high_urgency,negative,high,
+2025-08-15T05:27:01.791275,The product arrived late and the quality was terrible,negative_high_urgency,negative,high,quality
+2025-08-15T05:27:01.884586,The packaging was damaged and the item was broken,negative_high_urgency,negative,high,quality
+2025-08-14T17:49:23,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-14T17:30:08,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-14T18:53:53,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T18:24:30,Battery dies quickly — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T18:31:49,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T18:32:27,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T18:12:24,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T18:50:47,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T18:28:21,It works as expected — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T18:35:04,Arrived late and box was damaged — on-time delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T19:29:53,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T20:41:53,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T20:48:15,It works as expected — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T20:23:50,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-14T20:33:20,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-14T20:12:24,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T21:37:33,Arrived late and box was damaged — slow courier,negative_high_urgency,negative,high,shipping
+2025-08-14T21:10:24,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T21:16:57,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T21:55:49,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-14T21:28:00,Camera is fantastic — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T21:55:27,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T22:47:20,Fast delivery and well packed — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T22:16:38,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T22:25:33,Amazing battery life — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T22:30:42,The item was broken and I want a refund — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T22:43:54,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-14T23:06:31,It works as expected — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T23:31:16,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-14T23:43:50,Arrived late and box was damaged — cheap build for the price,negative_high_urgency,negative,high,price
+2025-08-15T00:52:15,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-15T00:43:27,Arrived late and box was damaged — excellent build,negative_high_urgency,negative,high,
+2025-08-15T00:22:59,The item was broken and I want a refund — stopped working,negative_high_urgency,negative,high,quality
+2025-08-15T00:16:49,"Excellent quality, I loved it — late delivery",negative_high_urgency,negative,high,quality|shipping
+2025-08-15T00:49:11,The item was broken and I want a refund — great price,negative_high_urgency,negative,high,price|quality
+2025-08-15T00:00:57,"Excellent quality, I loved it — late delivery",negative_high_urgency,negative,high,quality|shipping
+2025-08-15T00:11:43,The item was broken and I want a refund — poor quality,negative_high_urgency,negative,high,quality
+2025-08-15T00:04:39,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T01:47:04,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T01:20:51,Arrived late and box was damaged — on-time delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T02:30:58,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-15T02:40:00,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-15T02:09:13,Arrived late and box was damaged — fast shipping,negative_high_urgency,negative,high,shipping
+2025-08-15T02:34:11,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-15T02:58:01,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T02:36:23,The item was broken and I want a refund — too expensive,negative_high_urgency,negative,high,price|quality
+2025-08-15T03:05:34,Arrived late and box was damaged — on-time delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T03:34:52,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T04:27:18,Fast delivery and well packed — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T04:32:32,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T04:21:59,The item was broken and I want a refund — defective unit,negative_high_urgency,negative,high,quality
+2025-08-15T04:04:44,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-15T04:30:05,The item was broken and I want a refund — excellent build,negative_high_urgency,negative,high,quality
+2025-08-15T05:39:06.663489,The product arrived late and the quality was terrible,negative_high_urgency,negative,high,quality
+2025-08-15T05:39:06.704625,The packaging was damaged and the item was broken,negative_high_urgency,negative,high,quality
+2025-08-14T17:16:29,The item was broken and I want a refund — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T17:10:40,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T17:47:11,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T17:01:33,Amazing battery life — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T17:03:21,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T17:28:37,Arrived late and box was damaged — cheap build for the price,negative_high_urgency,negative,high,price
+2025-08-14T18:11:16,The item was broken and I want a refund — excellent build,negative_high_urgency,negative,high,quality
+2025-08-14T18:33:27,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-14T18:40:50,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T18:40:23,The item was broken and I want a refund — great price,negative_high_urgency,negative,high,price|quality
+2025-08-14T18:29:44,The item was broken and I want a refund — worth the cost,negative_high_urgency,negative,high,price|quality
+2025-08-14T19:07:51,The item was broken and I want a refund — too expensive,negative_high_urgency,negative,high,price|quality
+2025-08-14T19:32:43,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T19:06:34,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T20:03:56,The item was broken and I want a refund — defective unit,negative_high_urgency,negative,high,quality
+2025-08-14T20:53:01,It works as expected — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T20:03:21,Arrived late and box was damaged — feels solid,negative_high_urgency,negative,high,
+2025-08-14T20:58:02,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T21:06:13,Camera is fantastic — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T21:45:38,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T22:27:52,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T22:42:31,The item was broken and I want a refund — on-time delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T22:44:36,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-14T22:24:21,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-14T23:10:05,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T23:38:35,Battery dies quickly — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T23:15:00,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T23:34:58,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T23:59:56,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-14T23:15:56,The item was broken and I want a refund — defective unit,negative_high_urgency,negative,high,quality
+2025-08-14T23:28:32,Amazing battery life — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T00:46:19,The item was broken and I want a refund — excellent build,negative_high_urgency,negative,high,quality
+2025-08-15T00:29:55,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-15T00:46:15,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-15T00:09:39,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-15T01:41:18,It works as expected — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T01:51:59,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-15T01:04:27,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-15T01:44:00,Fast delivery and well packed — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T01:12:33,Poor camera quality — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T01:10:55,The item was broken and I want a refund — overpriced,negative_high_urgency,negative,high,price|quality
+2025-08-15T02:53:17,The item was broken and I want a refund — slow courier,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T02:09:51,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T02:25:50,Amazing battery life — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T03:20:25,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-15T03:02:56,Arrived late and box was damaged — defective unit,negative_high_urgency,negative,high,quality
+2025-08-15T04:19:19,Amazing battery life — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T04:52:19,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-15T04:39:02,Great value for the price — late delivery,negative_high_urgency,negative,high,price|shipping
+2025-08-15T04:33:45,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-15T05:43:23.696196,The product arrived late and the quality was terrible,negative_high_urgency,negative,high,quality
+2025-08-15T05:43:23.733829,The packaging was damaged and the item was broken,negative_high_urgency,negative,high,quality
+2025-08-14T18:05:22,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T18:57:02,Fast delivery and well packed — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T18:52:57,Arrived late and box was damaged — damaged packaging,negative_high_urgency,negative,high,
+2025-08-14T19:59:04,Amazing battery life — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-14T19:48:35,Arrived late and box was damaged — defective unit,negative_high_urgency,negative,high,quality
+2025-08-14T19:40:53,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-14T20:21:21,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T20:17:50,Arrived late and box was damaged — great price,negative_high_urgency,negative,high,price
+2025-08-14T20:07:25,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T21:46:04,Arrived late and box was damaged — stopped working,negative_high_urgency,negative,high,
+2025-08-14T21:49:12,Arrived late and box was damaged — fast shipping,negative_high_urgency,negative,high,shipping
+2025-08-14T22:44:50,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-14T22:14:03,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-14T22:15:39,The item was broken and I want a refund — damaged packaging,negative_high_urgency,negative,high,quality
+2025-08-14T23:16:22,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-14T23:20:13,Arrived late and box was damaged — stopped working,negative_high_urgency,negative,high,
+2025-08-14T23:36:51,The item was broken and I want a refund — defective unit,negative_high_urgency,negative,high,quality
+2025-08-14T23:39:15,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-14T23:15:50,Camera is fantastic — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T00:46:35,Amazing battery life — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T00:07:20,The item was broken and I want a refund — on-time delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T00:55:37,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-15T00:50:54,The item was broken and I want a refund — feels solid,negative_high_urgency,negative,high,quality
+2025-08-15T00:35:24,The item was broken and I want a refund — too expensive,negative_high_urgency,negative,high,price|quality
+2025-08-15T00:18:05,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T00:45:56,Arrived late and box was damaged — stopped working,negative_high_urgency,negative,high,
+2025-08-15T00:22:40,Arrived late and box was damaged,negative_high_urgency,negative,high,
+2025-08-15T01:45:06,The item was broken and I want a refund — excellent build,negative_high_urgency,negative,high,quality
+2025-08-15T01:05:38,The item was broken and I want a refund — poor quality,negative_high_urgency,negative,high,quality
+2025-08-15T01:27:28,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-15T01:15:01,Arrived late and box was damaged — stopped working,negative_high_urgency,negative,high,
+2025-08-15T01:09:44,Arrived late and box was damaged — cheap build for the price,negative_high_urgency,negative,high,price
+2025-08-15T02:59:18,Arrived late and box was damaged — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T02:40:09,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-15T02:33:16,The item was broken and I want a refund — damaged packaging,negative_high_urgency,negative,high,quality
+2025-08-15T02:09:57,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-15T03:09:20,Poor camera quality — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T03:36:03,The item was broken and I want a refund — fast shipping,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T03:32:45,Arrived late and box was damaged — poor quality,negative_high_urgency,negative,high,quality
+2025-08-15T03:57:13,Arrived late and box was damaged — overpriced,negative_high_urgency,negative,high,price
+2025-08-15T03:35:13,The item was broken and I want a refund,negative_high_urgency,negative,high,quality
+2025-08-15T04:29:45,Arrived late and box was damaged — too expensive,negative_high_urgency,negative,high,price
+2025-08-15T04:45:07,Poor camera quality — late delivery,negative_high_urgency,negative,high,quality|shipping
+2025-08-15T04:19:57,Battery dies quickly — late delivery,negative_high_urgency,negative,high,shipping
+2025-08-15T06:08:37.837336Z,Batería dura poco,negative,high,umbral de alerta,batería|duración
+2025-08-15T06:10:24.464658Z,Batería dura poco,negative,high,umbral de alerta,batería|duración
+2025-08-15T07:18:32.097686Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:32.137357Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:18:32.194439Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:32.485589Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:32.516345Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:32.540742Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:18:32.996747Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:18:33.069879Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:18:33.098604Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:33.207373Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:18:33.440930Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:18:33.616393Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:33.642680Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:18:33.663154Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:33.958415Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:18:34.007071Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:18:34.056829Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:34.095669Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:34.114378Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:18:34.153822Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:18:34.209888Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:34.296851Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:18:34.445057Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:18:34.464684Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:18:34.657060Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:34.836721Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:35.003565Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:18:35.214584Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:35.274613Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:18:35.321482Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:35.558712Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:35.587982Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:35.924917Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:35.964321Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:18:36.207903Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:18:36.321245Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:36.343109Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:36.363733Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:18:36.499552Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:18:36.625101Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:18:36.657217Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:49:39.209530Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:39.256349Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:49:39.302880Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:39.732922Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:39.770511Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:39.809705Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:49:40.422891Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:49:40.481093Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:49:40.519942Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:40.688581Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:49:41.012514Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:49:41.240419Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:41.287437Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:49:41.310357Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:41.581867Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:49:41.673326Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:49:41.727844Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:41.794536Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:41.814551Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:49:41.923095Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:49:42.010264Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:42.186374Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:49:42.358798Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:49:42.388030Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:49:42.587093Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:42.786394Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:43.060239Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:49:43.284985Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:43.347016Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:49:43.417662Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:43.670470Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:43.697664Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:44.104539Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:44.166204Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:49:44.489258Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:49:44.653752Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:44.677555Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:44.707253Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:49:44.846756Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:49:44.969185Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:49:45.001856Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:54:26.717153Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:26.762814Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:54:26.817960Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:27.218675Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:27.260820Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:27.304560Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:54:27.866997Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:54:27.948418Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:54:27.984545Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:28.123445Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:54:28.466404Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:54:28.665156Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:28.704716Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:54:28.731893Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:29.028105Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:54:29.118710Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:54:29.173906Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:29.286681Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:29.320925Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:54:29.417313Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:54:29.491223Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:29.651703Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:54:29.839478Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:54:29.875835Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T07:54:30.075017Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:30.234373Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:30.460908Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T07:54:30.800982Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:30.905196Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:54:30.984749Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:31.297129Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:31.356143Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:31.822219Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:31.878483Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T07:54:32.185751Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T07:54:32.301739Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:32.328684Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:32.367503Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T07:54:32.500245Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T07:54:32.628497Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T07:54:32.656784Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T08:16:39.529017Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:39.576491Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T08:16:39.612356Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:39.928632Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:39.966844Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:39.992397Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T08:16:40.616093Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T08:16:40.690855Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T08:16:40.731176Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:40.892387Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T08:16:41.164384Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T08:16:41.425505Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:41.458819Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T08:16:41.498188Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:41.840469Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T08:16:41.951951Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T08:16:41.992550Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:42.032481Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:42.050476Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T08:16:42.093291Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T08:16:42.170747Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:42.275269Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T08:16:42.487930Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T08:16:42.513571Z,negativo/alto,negative,high,umbral auto,precio|calidad
+2025-08-15T08:16:42.752489Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:43.022098Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:43.239232Z,negativo/alto,negative,high,umbral auto,calidad|envío
+2025-08-15T08:16:43.678854Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:43.863313Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T08:16:44.075993Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:44.802699Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:44.841290Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:45.761742Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:45.846642Z,negativo/alto,negative,high,umbral auto,
+2025-08-15T08:16:46.298324Z,negativo/alto,negative,high,umbral auto,calidad
+2025-08-15T08:16:46.459646Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:46.516952Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:46.568348Z,negativo/alto,negative,high,umbral auto,precio|envío
+2025-08-15T08:16:46.792776Z,negativo/alto,negative,high,umbral auto,envío
+2025-08-15T08:16:47.017760Z,negativo/alto,negative,high,umbral auto,precio|calidad|envío
+2025-08-15T08:16:47.051702Z,negativo/alto,negative,high,umbral auto,precio|calidad
