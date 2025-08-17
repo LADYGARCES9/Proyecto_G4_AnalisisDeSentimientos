@@ -20,4 +20,5 @@ ENV KAFKA_BROKERS=kafka:9092 \
     GROUP_ID=absa-v1 \
     MODELS_DIR=/app/models
 
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
+
