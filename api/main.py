@@ -143,7 +143,7 @@ def predict_one(item: Item):
     try:
         cid = enqueue(TOPIC_SENT_IN, {"text": item.text})
         PENDING_TEXT[cid] = item.text
-        return {"ok": True, "correlation_id": cid}
+        return {"ok": True, "correlation_id": item}
     except Exception as e:
         return JSONResponse(status_code=500, content={"detail": f"error en /predict: {e}"})
 
