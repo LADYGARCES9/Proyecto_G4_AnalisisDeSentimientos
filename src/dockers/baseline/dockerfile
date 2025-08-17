@@ -22,4 +22,5 @@ ENV KAFKA_BROKERS=kafka:9092 \
     GROUP_ID=sentiment-v1 \
     MODEL_PATH=/app/models/02_baseline_best.joblib
 
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
+
