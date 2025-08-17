@@ -2,7 +2,7 @@
 import joblib
 from sklearn.pipeline import Pipeline
 
-obj = joblib.load(MODEL_PATH,"src/02_baseline_best.joblib")
+obj = joblib.load(MODEL_PATH,"/models/02_baseline_best.joblib")
 
 # Caso A: guardaste un Pipeline entero (.predict ya maneja el preproc)
 if isinstance(obj, Pipeline):
@@ -34,5 +34,6 @@ else:
         if proba_fn:
             out["proba"] = proba_fn(X)[0].tolist()
         return out
+
 
 
