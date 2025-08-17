@@ -181,7 +181,7 @@ def get_result(cid: str):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        "app:app",
+        "main:app",
         host="0.0.0.0",
         port=int(os.getenv("PORT", 8000)),
         log_level="info"
