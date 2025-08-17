@@ -130,7 +130,7 @@ def _startup():
     t.start()
 
 # ===== endpoints =====
-@app.get("/test")
+@app.post("/test")
 def test():
     return {"ok": True, "message": "🚀 API funcionando correctamente"}
 
