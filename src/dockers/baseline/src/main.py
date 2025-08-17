@@ -1,46 +1,53 @@
 # --- carga robusta de artefacto ---
-import os
-import joblib
+import os, json, time, joblib, glob, re
 from sklearn.pipeline import Pipeline
+from confluent_kafka import Consumer, Producer
 
-# Ruta del modelo (ajusta el nombre al .joblib real)
+
+BOOT = os.getenv("KAFKA_BROKERS", "kafka:9092")
+TIN  = os.getenv("TOPIC_IN",  "ml..in")
+TOUT = os.getenv("TOPIC_OUT", "ml.sentiment.out")
+GID  = os.getenv("GROUP_ID",  "sentiment-v1")
 MODEL_PATH = os.getenv("MODEL_PATH", "/models/02_baseline_best.joblib")
 
-print(f"🔍 Cargando modelo desde: {MODEL_PATH}")
+print(f"🔍 Cargando modelo: {MODEL_PATH}")
 obj = joblib.load(MODEL_PATH)
 
-# Caso A: guardaste un Pipeline entero (.predict ya maneja el preproc)
 if isinstance(obj, Pipeline):
-    pipeline = obj
-    model = None
-    pre = None
-
+    pipe = obj
     def infer(payload):
         text = payload["text"] if isinstance(payload, dict) else str(payload)
-        y = pipeline.predict([text])[0]
-        proba_fn = getattr(pipeline, "predict_proba", None)
-        out = {"prediction": y}
-        if proba_fn:
-            out["proba"] = proba_fn([text])[0].tolist()
-        return out
-
-# Caso B: guardaste un dict {"model": clf, "preproc": vectorizer}
+        y = pipe.predict([text])[0]
+        proba = getattr(pipe, "predict_proba", None)
+        return {"prediction": y, "proba": proba([text])[0].tolist() if proba else None}
 else:
-    bundle = obj
-    model = bundle.get("model") or bundle.get("clf") or bundle  # por si es solo el modelo
-    pre = bundle.get("preproc")
-
+    bundle = obj if isinstance(obj, dict) else {"model": obj}
+    model = bundle.get("model") or bundle
+    pre   = bundle.get("preproc")
     def infer(payload):
         text = payload["text"] if isinstance(payload, dict) else str(payload)
         X = pre.transform([text]) if pre else [text]
         y = model.predict(X)[0]
-        proba_fn = getattr(model, "predict_proba", None)
-        out = {"prediction": y}
-        if proba_fn:
-            out["proba"] = proba_fn(X)[0].tolist()
-        return out
+        proba = getattr(model, "predict_proba", None)
+        return {"prediction": y, "proba": proba(X)[0].tolist() if proba else None}
 
+c = Consumer({"bootstrap.servers": BOOT, "group.id": GID, "auto.offset.reset":"earliest", "enable.auto.commit": True})
+p = Producer({"bootstrap.servers": BOOT})
 
+def main():
+    c.subscribe([TIN]); print(f"✅ Sentiment listening: {TIN}")
+    try:
+        while True:
+            m = c.poll(1.0)
+            if not m: continue
+            if m.error(): print("KafkaErr:", m.error()); continue
+            evt = json.loads(m.value().decode("utf-8"))
+            cid = evt.get("correlation_id","no-cid")
+            out = {"correlation_id": cid, "result": infer(evt.get("payload","")), "ts": time.time()}
+            p.produce(TOUT, json.dumps(out).encode("utf-8"), key=cid); p.poll(0)
+            print("✅ processed:", out)
+    finally:
+        c.close(); p.flush()
 
-
-
+if __name__ == "__main__":
+    main()
