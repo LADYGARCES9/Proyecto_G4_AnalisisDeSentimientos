@@ -11,9 +11,9 @@ COPY --from=builder /wheels /wheels
 RUN pip install /wheels/* && rm -rf /wheels
 
 # código
-COPY src/dockers/baseline/main.py ./main.py
+COPY src/main.py ./main.py
 # modelo (desde la RAÍZ del repo)
-COPY models/trained_models/02_baseline_best.joblib ./models/02_baseline_best.joblib
+COPY src/02_baseline_best.joblib ./models/02_baseline_best.joblib
 
 ENV KAFKA_BROKERS=kafka:9092 \
     TOPIC_IN=ml.sentiment.in \
@@ -22,3 +22,4 @@ ENV KAFKA_BROKERS=kafka:9092 \
     MODEL_PATH=/app/models/02_baseline_best.joblib
 
 CMD ["python", "main.py"]
+
