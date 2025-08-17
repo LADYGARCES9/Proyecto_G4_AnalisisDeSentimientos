@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from typing import Optional, List, Dict
 from pathlib import Path
 import os, json, uuid, threading
+from threading import Event   # ✅ necesario para manejar los waiters
 
 # ===== rutas del proyecto =====
 try:
@@ -41,20 +42,13 @@ ALERTS_CSV  = reports_dir / "alerts_log.csv"
 reports_dir.mkdir(parents=True, exist_ok=True)
 
 # ===== modelos =====
-class BatchReq(BaseModel):
-    csv_path: str
-    text_col: str
-    max_rows: Optional[int] = 1000
-
 class Item(BaseModel):
     text: str
-
-class BatchItems(BaseModel):
-    items: List[Item]
 
 # ===== caches =====
 RESULTS: Dict[str, Dict] = {}
 PENDING_TEXT: Dict[str, str] = {}
+WAITERS: Dict[str, Event] = {}   # ✅ aquí guardamos los eventos de espera
 
 # ===== helpers =====
 def simple_urgency(text: str, sentiment: str) -> str:
@@ -136,6 +130,11 @@ def bg_consume():
                     if sentiment == "negative" and urg == "high":
                         append_alert(ALERTS_CSV, "negativo/alto", sentiment, urg, "umbral auto", aspects_str)
 
+                # 🔔 Despierta a quien esté esperando este cid
+                waiter = WAITERS.pop(cid, None)
+                if waiter:
+                    waiter.set()
+
                 print("✅ stored:", cid)
             except Exception as e:
                 print("❌ parse error:", e)
@@ -153,10 +152,6 @@ def _startup():
     t.start()
 
 # ===== endpoints =====
-@app.post("/test")
-def test():
-    return {"ok": True, "message": "🚀 API funcionando correctamente"}
-
 @app.get("/health")
 def health():
     return {"status": "ok"}
@@ -164,49 +159,28 @@ def health():
 @app.post("/predict")
 def predict_one(item: Item):
     try:
-        # 1) Publica en Kafka
         cid = enqueue(TOPIC_SENT_IN, {"text": item.text})
         PENDING_TEXT[cid] = item.text
-
-        # 2) Espera la respuesta del worker (hasta PREDICT_TIMEOUT_SEC)
-        ev = Event()
-        WAITERS[cid] = ev
-        ok = ev.wait(timeout=PREDICT_TIMEOUT_SEC)
-
-        if not ok:
-            WAITERS.pop(cid, None)  # limpieza por si acaso
-            return JSONResponse(
-                status_code=504,
-                content={"ok": False, "detail": "Timeout esperando resultado", "correlation_id": cid}
-            )
-
-        # 3) Entrega el resultado real
+        waiter = Event()
+        WAITERS[cid] = waiter
+        if not waiter.wait(timeout=10):   # ⏳ espera hasta 10s
+            raise TimeoutError("timeout esperando resultado de Kafka")
         evt = RESULTS.pop(cid, None)
         if not evt:
-            return JSONResponse(
-                status_code=500,
-                content={"ok": False, "detail": "Respuesta no disponible tras señal", "correlation_id": cid}
-            )
-
-        return {"ok": True, "result": evt.get("result")}
-
+            raise ValueError("sin resultado")
+        return evt   # ✅ devuelve el resultado directo
     except Exception as e:
         return JSONResponse(status_code=500, content={"detail": f"error en /predict: {e}"})
-
-
-@app.get("/result/{cid}")
-def get_result(cid: str):
-    evt = RESULTS.get(cid)
-    if not evt:
-        raise HTTPException(status_code=404, detail="Result not found yet")
-    return evt
 
 # ===== arranque rápido =====
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        "main:app",
+        "main:app",   # 👈 ajusta si tu archivo se llama distinto
         host="0.0.0.0",
         port=int(os.getenv("PORT", 8000)),
+        log_level="info"
+    )
+
         log_level="info"
     )
