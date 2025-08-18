@@ -94,63 +94,98 @@ if len(results):
                              .groupby("urgency").size().reindex(order_urg, fill_value=0).reset_index(name="count")
 
     col1, col2 = st.columns(2)
-    with col1:
-        chart_sent = alt.Chart(sent_counts).mark_bar(color="#A5B4FC").encode(
+with col1:
+    chart_sent = (
+        alt.Chart(sent_counts)
+        .mark_bar(color="#A5B4FC")
+        .encode(
             x=alt.X("sentiment:N", title="Sentimiento", sort=order_sent),
             y=alt.Y("count:Q", title="Conteo"),
-            tooltip=["sentiment","count"]
-        ).properties(height=360)
-        st.altair_chart(chart_sent, use_container_width=True)
-    with col2:
-        chart_urg = alt.Chart(urg_counts).mark_bar(color="#FBC4AB").encode(
+            tooltip=["sentiment", "count"],
+        )
+        .properties(height=360)
+    )
+    st.altair_chart(chart_sent, use_container_width=True)
+
+with col2:
+    chart_urg = (
+        alt.Chart(urg_counts)
+        .mark_bar(color="#FBC4AB")
+        .encode(
             x=alt.X("urgency:N", title="Urgencia", sort=order_urg),
             y=alt.Y("count:Q", title="Conteo"),
-            tooltip=["urgency","count"]
-        ).properties(height=360)
-        st.altair_chart(chart_urg, use_container_width=True)
+            tooltip=["urgency", "count"],
+        )
+        .properties(height=360)
+    )
+    st.altair_chart(chart_urg, use_container_width=True)
 
-    st.subheader("Cruce urgencia × sentimiento")
-    if total_rango:
-        cross = df_filtered.assign(
+st.subheader("Cruce urgencia × sentimiento")
+if total_rango:
+    cross = (
+        df_filtered.assign(
             urgency=df_filtered["urgency"].astype(str).str.lower(),
-            sentiment=df_filtered["sentiment"].astype(str).str.lower()
-        ).groupby(["urgency","sentiment"]).size().reset_index(name="count")
-        full_idx = pd.MultiIndex.from_product([order_urg, order_sent], names=["urgency","sentiment"])
-        cross = cross.set_index(["urgency","sentiment"]).reindex(full_idx, fill_value=0).reset_index()
-        heat = alt.Chart(cross).mark_rect().encode(
+            sentiment=df_filtered["sentiment"].astype(str).str.lower(),
+        )
+        .groupby(["urgency", "sentiment"])
+        .size()
+        .reset_index(name="count")
+    )
+    full_idx = pd.MultiIndex.from_product([order_urg, order_sent], names=["urgency", "sentiment"])
+    cross = cross.set_index(["urgency", "sentiment"]).reindex(full_idx, fill_value=0).reset_index()
+
+    heat = (
+        alt.Chart(cross)
+        .mark_rect()
+        .encode(
             y=alt.Y("urgency:N", title="Urgencia", sort=order_urg),
             x=alt.X("sentiment:N", title="Sentimiento", sort=order_sent),
             color=alt.Color("count:Q", title="Conteo"),
-            tooltip=["urgency","sentiment","count"]
-        ).properties(height=260)
-        st.altair_chart(heat, use_container_width=True)
+            tooltip=["urgency", "sentiment", "count"],
+        )
+        .properties(height=260)
+    )
+    st.altair_chart(heat, use_container_width=True)
 
-    st.subheader("Composición de sentimiento por nivel de urgencia (%)")
-    if total_rango:
-        stack_df = df_filtered.assign(
+st.subheader("Composición de sentimiento por nivel de urgencia (%)")
+if total_rango:
+    stack_df = (
+        df_filtered.assign(
             urgency=df_filtered["urgency"].astype(str).str.lower(),
-            sentiment=df_filtered["sentiment"].astype(str).str.lower()
-        ).groupby(["urgency","sentiment"]).size().reset_index(name="count")
-        full_idx = pd.MultiIndex.from_product([order_urg, order_sent], names=["urgency","sentiment"])
-        stack_df = stack_df.set_index(["urgency","sentiment"]).reindex(full_idx, fill_value=0).reset_index()
-        stack_chart = alt.Chart(stack_df).mark_bar().encode(
+            sentiment=df_filtered["sentiment"].astype(str).str.lower(),
+        )
+        .groupby(["urgency", "sentiment"])
+        .size()
+        .reset_index(name="count")
+    )
+    full_idx = pd.MultiIndex.from_product([order_urg, order_sent], names=["urgency", "sentiment"])
+    stack_df = stack_df.set_index(["urgency", "sentiment"]).reindex(full_idx, fill_value=0).reset_index()
+
+    stack_chart = (
+        alt.Chart(stack_df)
+        .mark_bar()
+        .encode(
             x=alt.X("urgency:N", title="Urgencia", sort=order_urg),
             y=alt.Y("count:Q", stack="normalize", title="%"),
-            color=alt.Color("sentiment:N", title="Sentimiento", sort=order_sent,
-                            scale=alt.Scale(range=["#FCA5A5","#E5E7EB","#A7F3D0"])),
-            tooltip=["urgency","sentiment","count"]
-        ).properties(height=280)
-        st.altair_chart(stack_chart, use_container_width=True)
+            color=alt.Color(
+                "sentiment:N",
+                title="Sentimiento",
+                sort=order_sent,
+                scale=alt.Scale(range=["#FCA5A5", "#E5E7EB", "#A7F3D0"]),
+            ),
+            tooltip=["urgency", "sentiment", "count"],
+        )
+        .properties(height=280)
+    )
+    st.altair_chart(stack_chart, use_container_width=True)
 
-    st.subheader("Últimos resultados")
-    table = df_filtered.copy()
-    if "ts" in table.columns and table["ts"].notna().sum() > 0:
-        table["Fecha/Hora"] = table["ts"].dt.tz_convert("America/Guayaquil").dt.strftime("%Y-%m-%d %H:%M:%S")
-    else:
-    table = table[["sentiment","urgency","aspects","text"]].rename(columns={
-        "sentiment":"Sentimiento","urgency":"Urgencia","aspects":"Aspectos","text":"Texto"
-    })
-    st.dataframe(table, use_container_width=True)
+st.subheader("Últimos resultados")
+table = df_filtered.copy()
+table = table[["sentiment", "urgency", "aspects", "text"]].rename(
+    columns={"sentiment": "Sentimiento", "urgency": "Urgencia", "aspects": "Aspectos", "text": "Texto"}
+)
+st.dataframe(table, use_container_width=True)
+
 
 else:
     st.warning("Aún no hay datos en results_log.csv. Usa la API /predict o /batch para generar datos.")
