@@ -61,7 +61,7 @@ with c1:
 with c2:
     sent_filter = st.multiselect("Filtrar sentimiento", ["positive","neutral","negative"], default=["positive","neutral","negative"])
 with c3:
-    show_n = st.slider("Mostrar últimos N registros", 50, 5000, 500)
+    show_n = st.slider("Mostrar últimos N registros", 50, 3700, 500)
     st.metric("Alertas (global)", f"{len(alerts)}")
 
 if len(results):
@@ -147,8 +147,7 @@ if len(results):
     if "ts" in table.columns and table["ts"].notna().sum() > 0:
         table["Fecha/Hora"] = table["ts"].dt.tz_convert("America/Guayaquil").dt.strftime("%Y-%m-%d %H:%M:%S")
     else:
-        table["Fecha/Hora"] = ""
-    table = table[["Fecha/Hora","sentiment","urgency","aspects","text"]].rename(columns={
+    table = table[["sentiment","urgency","aspects","text"]].rename(columns={
         "sentiment":"Sentimiento","urgency":"Urgencia","aspects":"Aspectos","text":"Texto"
     })
     st.dataframe(table, use_container_width=True)
