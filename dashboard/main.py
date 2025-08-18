@@ -60,7 +60,8 @@ with c1:
 with c2:
     sent_filter = st.multiselect("Filtrar sentimiento", ["positive", "neutral", "negative"], default=["positive", "neutral", "negative"])
 with c3:
-    show_n = st.slider("Mostrar últimos N registros", 50, 3700, 500)
+    max_rows = len(results)
+    show_n = st.slider("Mostrar últimos N registros", 50, max_rows, min(500, max_rows))
     st.metric("Alertas (global)", f"{len(alerts)}")
 
 if len(results):
