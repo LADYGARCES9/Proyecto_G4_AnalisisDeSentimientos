@@ -17,19 +17,9 @@ import pandas as pd
 import altair as alt
 from pathlib import Path
 
-# reports_dir es la carpeta donde guardamos los CSV (results_log.csv y alerts_log.csv).
-# Intentamos primero src.utils.config_rutas; si no existe, añadimos src/ al sys.path y probamos utils.config_rutas
-try:
-    from src.utils.config_rutas import reports_dir
-except ModuleNotFoundError:
-    import sys
-    sys.path.append(str(Path(__file__).resolve().parents[0] / "src"))  # añade ./src
-    try:
-        from utils.config_rutas import reports_dir
-    except ModuleNotFoundError:
-        # Fallback: usa ./reports si no existe el módulo
-        reports_dir = (Path(__file__).resolve().parent / "reports")
-        reports_dir.mkdir(parents=True, exist_ok=True)
+
+# Ruta fija hacia la carpeta donde guardas los logs
+reports_dir = Path(__file__).resolve().parent / "src" 
 
 # Rutas de los ficheros
 RESULTS_CSV = reports_dir / "results_log.csv"
