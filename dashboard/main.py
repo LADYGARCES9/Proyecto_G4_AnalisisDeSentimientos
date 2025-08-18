@@ -2,7 +2,7 @@
 import os, sys, subprocess
 if __name__ == "__main__" and os.environ.get("RUNNING_UNDER_STREAMLIT") != "1":
     os.environ["RUNNING_UNDER_STREAMLIT"] = "1"
-    port = os.getenv("PORT", "8501")  # Railway inyecta $PORT
+    port = os.getenv("PORT", "8501") 
     cmd = [
         sys.executable, "-m", "streamlit", "run", __file__,
         "--server.port", str(port),
