@@ -1,5 +1,16 @@
-# app.py
-# Panel de Streamlit para visualizar resultados de análisis de sentimientos y urgencias sobre reseñas de Amazon.
+
+import os, sys, subprocess
+if __name__ == "__main__" and os.environ.get("RUNNING_UNDER_STREAMLIT") != "1":
+    os.environ["RUNNING_UNDER_STREAMLIT"] = "1"
+    port = os.getenv("PORT", "8501")  # Railway inyecta $PORT
+    cmd = [
+        sys.executable, "-m", "streamlit", "run", __file__,
+        "--server.port", str(port),
+        "--server.address", "0.0.0.0",
+        "--server.headless", "true",
+    ]
+    raise SystemExit(subprocess.call(cmd))
+
 
 import streamlit as st
 import pandas as pd
@@ -7,12 +18,18 @@ import altair as alt
 from pathlib import Path
 
 # reports_dir es la carpeta donde guardamos los CSV (results_log.csv y alerts_log.csv).
+# Intentamos primero src.utils.config_rutas; si no existe, añadimos src/ al sys.path y probamos utils.config_rutas
 try:
     from src.utils.config_rutas import reports_dir
 except ModuleNotFoundError:
     import sys
-    sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
-    from utils.config_rutas import reports_dir
+    sys.path.append(str(Path(__file__).resolve().parents[0] / "src"))  # añade ./src
+    try:
+        from utils.config_rutas import reports_dir
+    except ModuleNotFoundError:
+        # Fallback: usa ./reports si no existe el módulo
+        reports_dir = (Path(__file__).resolve().parent / "reports")
+        reports_dir.mkdir(parents=True, exist_ok=True)
 
 # Rutas de los ficheros
 RESULTS_CSV = reports_dir / "results_log.csv"
@@ -149,15 +166,3 @@ if len(results):
 else:
     st.warning("Aún no hay datos en results_log.csv. Usa la API /predict o /batch para generar datos.")
 
-# --- Ejecutar en Railway/local ---
-if __name__ == "__main__":
-    import os, subprocess, sys
-    script_path = os.path.abspath(__file__)
-    port = os.getenv("PORT", "8501")
-    cmd = [
-        sys.executable, "-m", "streamlit", "run", script_path,
-        "--server.port", str(port),
-        "--server.address", "0.0.0.0",
-        "--server.headless", "true"
-    ]
-    subprocess.run(cmd, check=True)
