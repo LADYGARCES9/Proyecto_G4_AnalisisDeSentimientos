@@ -1,13 +1,14 @@
-**Proyecto G4 - Análisis de Sentimientos en Reseñas de Amazon**
+#  Proyecto G4 - Análisis de Sentimientos en Reseñas de Amazon
 
-Este proyecto es una **Plataforma de Análisis de Sentimientos en Tiempo Real para e-commerce**, desarrollada por el grupo G4.  
-Nuestro objetivo es permitir a las empresas monitorear automáticamente reseñas de productos y menciones en redes sociales, identificando rápidamente problemas y oportunidades.
+Este proyecto es una **Plataforma de Análisis de Sentimientos en Tiempo Real para e-commerce**, desarrollada por el grupo **G4**.
 
-Utilizamos técnicas avanzadas de **Procesamiento del Lenguaje Natural (NLP)** para analizar texto, detectar urgencias, clasificar sentimientos y generar respuestas automáticas.
+Nuestro objetivo es permitir a las empresas monitorear automáticamente reseñas de productos y menciones en redes sociales, identificando rápidamente **problemas** y **oportunidades de mejora**.
+
+Utilizamos técnicas avanzadas de **Procesamiento de Lenguaje Natural (NLP)** para analizar texto, detectar urgencias, clasificar sentimientos y generar respuestas automáticas.
 
 ---
 
-**Características Principales**
+##  Características Principales
 
 - **Análisis de Sentimientos:** Clasificación en positivo, negativo o neutro.
 - **ABSA (Aspect-Based Sentiment Analysis):** Evaluación por aspectos (precio, calidad, envío...).
@@ -17,43 +18,56 @@ Utilizamos técnicas avanzadas de **Procesamiento del Lenguaje Natural (NLP)** p
 
 ---
 
-**Instalación**
+##  Instalación
 
-1. Clona este repositorio:
+### 1. Clona este repositorio
 
-   ```bash
-   git clone https://github.com/tu_usuario/Proyecto_G4_AnalisisDeSentimientos.git
-   cd Proyecto_G4_AnalisisDeSentimientos
-   ```
+```bash
+git clone https://github.com/tu_usuario/Proyecto_G4_AnalisisDeSentimientos.git
+cd Proyecto_G4_AnalisisDeSentimientos
+```
 
-2. Crea y activa un entorno virtual:
+### 2. Crea y activa un entorno virtual
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # En Windows: venv\Scripts\activate
-   ```
+```bash
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
 
-3. Instala dependencias:
+### 3. Instala las dependencias
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Dependiendo del módulo que vayas a ejecutar, instala sus requerimientos:
+
+```bash
+# Para la API
+pip install -r api/requirements.txt
+
+# Para el Dashboard
+pip install -r dashboard/requirements.txt
+
+# Para el modelo ABSA
+pip install -r src/dockers/absa/requirements.txt
+
+# Para el baseline
+pip install -r src/dockers/baseline/requirements.txt
+```
 
 ---
 
-**Cómo Ejecutar el Proyecto**
+##  Cómo Ejecutar el Proyecto
 
-***API (FastAPI)***
+###  API (FastAPI)
 
 ```bash
 cd api
 uvicorn app:app --reload
 ```
 
-Abre en tu navegador:  
-**http://127.0.0.1:8000/docs**
+Abre en tu navegador: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-***Dashboard (Dash)***
+---
+
+###  Dashboard
 
 ```bash
 cd dashboard
@@ -62,7 +76,7 @@ python app_dashboard.py
 
 ---
 
-**Cómo Ejecutar los Tests**
+## Cómo Ejecutar los Tests
 
 ```bash
 python run_tests.py
@@ -72,21 +86,22 @@ Esto ejecuta las pruebas en `tests/` y muestra un resumen de resultados.
 
 ---
 
-**Estructura del Proyecto**
+## Estructura del Proyecto
 
-```
+```bash
 ├── README.md
-├── requirements.txt
-├── run_tests.py
+├── .gitignore
+├── api/                    # API FastAPI
+│   ├── src/utils/          # Funciones auxiliares
+├── dashboard/              # Interfaz Dash
+│   ├── src/                # Funciones auxiliares
 ├── data/
 │   ├── raw/                # Datos originales
 │   ├── processed/          # Datos limpios
 │   └── external/           # Fuentes externas
-├── src/
-│   ├── data/               # Limpieza y transformación
-│   ├── models/             # Entrenamiento y predicción
-│   ├── utils/              # Funciones auxiliares
-│   └── visualization/      # Gráficas y reportes
+├── docs/                   # Documentación y PDFs
+│   ├── images/             # Diagramas, capturas del dashboard, visualizaciones
+│   ├── reports/            # Reportes generados en PDF o HTML
 ├── models/
 │   ├── trained_models/     # Modelos entrenados
 │   └── model_configs/      # Configs JSON
@@ -94,16 +109,15 @@ Esto ejecuta las pruebas en `tests/` y muestra un resumen de resultados.
 │   ├── exploratory/        # EDA
 │   ├── modeling/           # Modelado
 │   └── evaluation/         # Evaluación
-├── api/                    # API FastAPI
-├── dashboard/              # Interfaz Dash
+├── src/
+│   ├── docker/             # Dockerfiles y contenerización
+│   └── utils/              # Funciones auxiliares
 ├── tests/                  # Unit tests
-├── docs/                   # Documentación y PDFs
-└── docker/                 # Dockerfiles y contenerización
 ```
 
 ---
 
-**Colaboradores del Proyecto**
+## Colaboradores del Proyecto
 
 - David Francisco Alvarez Alvarez  
 - Marcelo Xavier Castillo Valverde  
@@ -114,16 +128,6 @@ Esto ejecuta las pruebas en `tests/` y muestra un resumen de resultados.
 
 ---
 
-**Mejoras Futuras**
+## Licencia
 
-- [ ] Autenticación de usuarios en la API
-- [ ] Despliegue en la nube (Render / Heroku)
-- [ ] Incluir más aspectos en ABSA
-- [ ] Añadir pruebas automatizadas para la API
-- [ ] Mejorar la documentación técnica
-
----
-
-**Licencia**
-
-Este proyecto está bajo la licencia MIT.
+Este proyecto está bajo la licencia **UEES**.
